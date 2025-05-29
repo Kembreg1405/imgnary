@@ -86,7 +86,7 @@ if(imgnry.width()!='')
   }
 if(imgnry.height()!='')
   {
-  newHeight=img.height();
+  newHeight=imgnry.height();
   if(imgnry.max()) if(img.naturalHeight<newWidth) newHeight=img.naturalWidth;
   if(imgnry.min()) if(img.naturalHeight>newWidth) newHeight=img.naturalWidth;
   newWidth=newHeight*img.naturalWidth/img.naturalHeight;
