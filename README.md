@@ -13,7 +13,7 @@ imgnry.max(true);
 imgnry.width(800);
 imgnry.quality(1);
 imgnry.type('png');
-imgnry.resize().then((img)=>{console.log(img)}) //base64 of image with width 800
+imgnry.resize().then((img)=>{console.log(img)}) //base64
 
 //Example 2 : Resize image to width at least 800.
 var file=$('#my-file-box').prop('files')[0];
@@ -22,7 +22,7 @@ imgnry.min(true);
 imgnry.width(800);
 imgnry.quality(1);
 imgnry.type('png');
-imgnry.resize().then((img)=>{console.log(img)}) //base64 of image with width 800
+imgnry.resize().then((img)=>{console.log(img)}) //base64
 
 //Example 3 : Resize image to width 800.
 var file=$('#my-file-box').prop('files')[0];
@@ -32,7 +32,7 @@ imgnry.max(false);
 imgnry.width(800);
 imgnry.quality(1);
 imgnry.type('png');
-imgnry.resize().then((img)=>{console.log(img)}) //base64 of image with width 800
+imgnry.resize().then((img)=>{console.log(img)}) //base64
 
 //Example 1 : Resize image to max height 600.
 var file=$('#my-file-box').prop('files')[0];
@@ -41,6 +41,6 @@ imgnry.max(true);
 imgnry.height(600);
 imgnry.quality(1);
 imgnry.type('png');
-imgnry.resize().then((img)=>{console.log(img)}) //base64 of image with width 800
+imgnry.resize().then((img)=>{console.log(img)}) //base64
 
 
