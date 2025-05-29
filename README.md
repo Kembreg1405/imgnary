@@ -6,6 +6,7 @@ $.getScript('imgnry.js');
 or
 <script src='imgnry.js'></script>
 
+
 //Example 1 : Resize image to max width 800.
 
 var file=$('#my-file-box').prop('files')[0];
