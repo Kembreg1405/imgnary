@@ -44,7 +44,6 @@ imgnry.width=(pixels=null)=>
 {
 if(typeof imgnry.width.value=='undefined') imgnry.width.value='';
 if(pixels==null) return imgnry.width.value;
-if(pixels!='') imgnry.height('');
 imgnry.width.value=pixels;
 }
 
@@ -52,7 +51,6 @@ imgnry.height=(pixels=null)=>
 {
 if(typeof imgnry.height.value=='undefined') imgnry.height.value='';
 if(pixels==null) return imgnry.height.value;
-if(pixels!='') imgnry.width('');
 imgnry.height.value=pixels;
 }
 
@@ -76,7 +74,7 @@ return new Promise((resolve,reject)=>
 
 imgnry.size=(img)=>
 {
-var newWidth,newHeight;
+var newWidth,newHeight,limitByHeight=false;
 if(imgnry.width()!='')
   {
   newWidth=imgnry.width();
@@ -84,13 +82,20 @@ if(imgnry.width()!='')
   if(imgnry.min()) if(img.naturalWidth>newWidth) newWidth=img.naturalWidth;
   newHeight=newWidth*img.naturalHeight/img.naturalWidth;
   }
-if(imgnry.height()!='')
+
+if(imgnry.width()=='') limitByHeight=true;
+if(imgnry.width()!='') if(imgnry.height()<newHeight) limitByHeight=true;
+if(imgnry.height()=='') limitByHeight=false;
+
+if(limitByHeight) 
   {
   newHeight=imgnry.height();
   if(imgnry.max()) if(img.naturalHeight<newWidth) newHeight=img.naturalWidth;
   if(imgnry.min()) if(img.naturalHeight>newWidth) newHeight=img.naturalWidth;
   newWidth=newHeight*img.naturalWidth/img.naturalHeight;
   }
+imgnry.height('');
+imgnry.width('');
 const canvas=document.createElement('canvas');
 const ctx=canvas.getContext('2d');
 canvas.width=newWidth;
