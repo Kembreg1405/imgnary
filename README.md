@@ -11,6 +11,7 @@ or
 
 var file=$('#my-file-box').prop('files')[0];
 imgnry.file(file);
+
 imgnry.max(true); 
 imgnry.width(800);
 imgnry.quality(1);
