@@ -1,55 +1,46 @@
-# imgnary
-Resize images with javascript - Easiest way in the whole wide friggn world.
+imgnary
+The easiest way to resize images in JavaScript — simple, fast, and promise-based.
 
-Link to the imgnry.js file in the usual way:
-$.getScript('imgnry.js');
-or
-<script src='imgnry.js'></script>
+Why imgnary?
+Tired of complicated image resizing libraries?
+Want to resize and convert images in the browser with just a few lines of code?
+imgnary makes it effortless.
 
-var file=$('#my-file-box').prop('files')[0];
+Features
+Resize images to any width or height
 
-// Example 1 : Resize image to max width 800.
+Control image quality
 
+Convert image formats (PNG, JPEG, etc.)
+
+Promise-based API for easy async handling
+
+Lightweight and dependency-free
+
+Installation
+Just include the script in your HTML:
+
+html
+Copy
+Edit
+<script src="imgnry.js"></script>
+Usage
+javascript
+Copy
+Edit
+// Select your file input
+var file = document.getElementById('my-file-box').files[0];
+
+// Configure imgnary
 imgnry.file(file);
-imgnry.max(true); 
-imgnry.width(800);
-imgnry.quality(1);
-imgnry.type('png');
-imgnry.resize().then((img)=>{console.log(img)}) //base64
+imgnry.max(true);         // Maintain aspect ratio
+imgnry.width(800);        // Resize width to 800px
+imgnry.quality(1);        // Max quality (0 to 1)
+imgnry.type('png');       // Convert to PNG
 
-// Example 2 : Resize image to width at least 800.
-
-imgnry.file(file);
-imgnry.min(true); 
-imgnry.width(800);
-imgnry.quality(1);
-imgnry.type('png');
-imgnry.resize().then((img)=>{console.log(img)}) //base64
-
-// Example 3 : Resize image to width 800.
-
-imgnry.file(file);
-imgnry.min(false);
-imgnry.max(false);
-imgnry.width(800);
-imgnry.quality(1);
-imgnry.type('png');
-imgnry.resize().then((img)=>{console.log(img)}) //base64
-
-// Example 4 : Resize image to max height 600.
-
-imgnry.file(file);
-imgnry.max(true); 
-imgnry.height(600);
-imgnry.quality(1);
-imgnry.type('png');
-imgnry.resize().then((img)=>{console.log(img)}) //base64
-
-// Example 5 : Resize image to max width 800 and max height 600.
-
-imgnry.file(file); imgnry.max(true); 
-imgnry.width(800); 
-imgnry.height(600); 
-imgnry.quality(1); 
-imgnry.type('png'); 
-imgnry.resize().then((img)=>{console.log(img)}) //base64
+// Resize and get base64 image result
+imgnry.resize().then((img) => {
+  console.log(img); // base64 encoded image string
+});
+Why use imgnary?
+Because it’s the easiest way to resize images right in your browser with zero hassle.
